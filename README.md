@@ -16,6 +16,45 @@
 
 ---
 
+## ⬣ Skills & Tools
+
+<p align="center">
+  <!-- Languages -->
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+</p>
+
+<p align="center">
+  <!-- Robotics & Simulation -->
+  <img src="https://img.shields.io/badge/ROS2-22314E?style=for-the-badge&logo=ros&logoColor=white" />
+  <img src="https://img.shields.io/badge/NVIDIA%20Isaac%20Sim-76B900?style=for-the-badge&logo=nvidia&logoColor=white" />
+  <img src="https://img.shields.io/badge/Simulation-SIM-blue?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <!-- ML & MLOps -->
+  <img src="https://img.shields.io/badge/Time--Series%20ML-FF6F00?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Anomaly%20Detection-8A2BE2?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Deep%20Learning-20232A?style=for-the-badge&logo=pytorch&logoColor=EE4C2C" />
+</p>
+
+<p align="center">
+  <!-- Systems & Dashboards -->
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST%20APIs-0052CC?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Telemetry%20Dashboards-0F766E?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <!-- Dev & Infra -->
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
+</p>
+
+---
+
 ## ⬣ Professional Overview
 
 - Robotics & autonomous systems engineer focused on **UAVs, satellites, and mission‑critical robotic fleets**.  
@@ -105,4 +144,3 @@ Predictive maintenance and anomaly triage pipeline for safety‑critical systems
 - **Robotics Engineer / Robotics Infrastructure Engineer** roles on UAV, satellite, or robotic fleet teams.  
 - **Autonomous Systems / Perception & Diagnostics Engineer** positions focused on reliability, health monitoring, and safety.  
 - Teams that value **simulation, observability, and mission‑critical robustness** as much as raw model performance.
-
