@@ -11,13 +11,6 @@
 </p>
 
 <p align="center">
-  <!-- Replace with your real links -->
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">LinkedIn</a> ·
-  <a href="https://YOUR-PORTFOLIO-URL.com">Portfolio</a> ·
-  <a href="mailto:YOUR-EMAIL@example.com">Email</a>
-</p>
-
-<p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=22&pause=2000&color=3B82F6&center=true&vCenter=true&width=1000&lines=Robotics+%26+Autonomous+Systems+Engineer;UAV+Health+Monitoring+%26+Prognostics;Satellite+Mission+Control+%26+Telemetry;Safety-Critical+Robotics+Infrastructure" alt="Typing SVG" />
 </p>
 
