@@ -1,3 +1,10 @@
+<!-- ================= HEADER ================= -->
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Rhutvik-pachghare1999/Rhutvik-pachghare1999/main/image.jpg"
+       alt="The Mechanica Library Robotics Banner" width="100%"/>
+</p>
+
 <h1 align="center">🤖 Rhutvik Pachghare</h1>
 
 <p align="center">
@@ -6,17 +13,17 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rhutvik-pachghare1999/Rhutvik-pachghare1999/main/image.jpg"
-       alt="Robotics & Autonomous Systems Banner" width="100%"/>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=22&pause=2000&color=3B82F6&center=true&vCenter=true&width=1000&lines=Robotics+%26+Autonomous+Systems+Engineer;UAV+Health+Monitoring+%26+Prognostics;Satellite+Mission+Control+%26+Telemetry;Safety-Critical+Robotics+Infrastructure" alt="Typing SVG" />
+  <img
+    src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=22&pause=2000&color=3B82F6&center=true&vCenter=true&width=1000&lines=Robotics+%26+Autonomous+Systems+Engineer;UAV+Health+Monitoring+%26+Prognostics;Satellite+Mission+Control+%26+Telemetry;Safety-Critical+Robotics+Infrastructure"
+    alt="Typing headline"
+  />
 </p>
 
 ---
 
-## ⬣ Skills & Tools
+<!-- ================= SKILLS STRIP ================= -->
+
+<h2 align="center">⬣ Skills & Tools</h2>
 
 <p align="center">
   <!-- Languages & OS -->
@@ -29,7 +36,7 @@
   <!-- Robotics & Simulation -->
   <img src="https://img.shields.io/badge/ROS2-22314E?style=for-the-badge&logo=ros&logoColor=white" />
   <img src="https://img.shields.io/badge/NVIDIA%20Isaac%20Sim-76B900?style=for-the-badge&logo=nvidia&logoColor=white" />
-  <img src="https://img.shields.io/badge/Simulation-SIM-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Robotics%20Simulation-0EA5E9?style=for-the-badge" />
 </p>
 
 <p align="center">
@@ -120,7 +127,7 @@ Mission‑control style stack for satellites and orbital systems, focused on hea
 Health monitoring and MLOps pipeline for satellite telemetry.
 
 - Ingests raw telemetry, builds structured features, and runs **anomaly detection over subsystems**.  
-- Provides dashboards that answer: *“Is the spacecraft healthy right now?”* and *“Which subsystem is drifting?”*  
+- Provides dashboards that answer: “Is the spacecraft healthy right now?” and “Which subsystem is drifting?”  
 - Pattern is reusable for any sensor‑heavy robotic or autonomous platform.
 
 🔗 Repo: [orbit‑Q](https://github.com/Rhutvik-pachghare1999/orbit-Q)
