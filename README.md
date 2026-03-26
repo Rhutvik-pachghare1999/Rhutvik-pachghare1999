@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Rhutvik-pachghare1999/Rhutvik-pachghare1999/main/image.jpg"
-       alt="The Mechanica Library Robotics Banner" width="100%"/>
+       alt="The Mechanica Library Robotics Banner" width="100%" />
 </p>
 
 <h1 align="center">🤖 Rhutvik Pachghare</h1>
@@ -21,7 +21,7 @@
 
 ---
 
-<!-- ================= SKILLS STRIP ================= -->
+<!-- ================= SKILLS ================= -->
 
 <h2 align="center">⬣ Skills & Tools</h2>
 
