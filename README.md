@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <!-- Replace with your banner image raw URL -->
-  <img src="PASTE_YOUR_BANNER_RAW_URL_HERE" alt="Robotics & Autonomous Systems Banner" width="90%"/>
+  <img src="https://raw.githubusercontent.com/Rhutvik-pachghare1999/Rhutvik-pachghare1999/main/image.jpg"
+       alt="Robotics & Autonomous Systems Banner" width="100%"/>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 ## ⬣ Skills & Tools
 
 <p align="center">
-  <!-- Languages -->
+  <!-- Languages & OS -->
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
