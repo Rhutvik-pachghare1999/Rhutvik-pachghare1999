@@ -146,6 +146,30 @@ Predictive maintenance and anomaly triage pipeline for safety‑critical systems
 
 ---
 
+### 🧠 NeuroTraction — Neural Network-Based Real-Time Traction Control
+
+Real-time AI-powered traction safety system for ground robots using a lightweight neural network.
+
+- Predicts wheel slip probability from live IMU and odometry data at 20Hz via ROS2.
+- Dynamically throttles motor commands to prevent loss of traction before it occurs.
+- Achieves 99.1% R² accuracy on Clearpath Husky A200 platform.
+
+🔗 Repo: [NeuroTraction](https://github.com/Rhutvik-pachghare1999/NeuroTraction)
+
+---
+
+### 🚀 Astraeus-9-C-C — Hybrid Orbital Re-Entry Mission Control
+
+Fault-tolerant mission control system for orbital re-entry monitoring with embedded sensing and ML anomaly detection.
+
+- Integrates ESP32 embedded sensing kernel with Kalman filtering for real-time hardware degradation detection.
+- Physics-based re-entry simulator combined with ML-powered anomaly detection dashboard.
+- Full-stack: Docker + MQTT + Postgres + Streamlit operator dashboard.
+
+🔗 Repo: [Astraeus-9-C-C](https://github.com/Rhutvik-pachghare1999/Astraeus-9-C-C)
+
+---
+
 ## ⬣ What I’m Looking For
 
 - **Robotics Engineer / Robotics Infrastructure Engineer** roles on UAV, satellite, or robotic fleet teams.  
