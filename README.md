@@ -96,77 +96,62 @@
 
 ---
 
-## ⬣ Mission‑Critical Projects
+## ⬣ Featured Projects
 
-### 🛡️ UAV‑Aegis — UAV Health & Prognostics
+### 🤖 DriftBot — Autonomous Ground Robot with 360° ToF SLAM (ROS2)
 
-Propeller and motor‑health diagnostics suite for UAVs, combining vibration signatures, deep learning models, and an operator dashboard.
+From-scratch physical robot: ESP32-S3 dual-core firmware + ROS2 Jazzy micro-ROS pipeline.
 
-- Detects evolving faults in UAV propulsion using multi‑channel vibration and time‑frequency features.  
-- Generates interpretable health scores to guide **maintenance vs. launch** decisions across a UAV fleet.  
-- Designed to integrate with ROS2/Isaac Sim style pipelines and real‑world UAV deployments.
+- Custom rotating 3× VL53L1X ToF array assembled into 360° `LaserScan`; SLAM Toolbox mapping.
+- Dual-core FreeRTOS firmware, dual I2C buses, EKF sensor fusion via robot_localization.
+- Real recorded 90-min hardware session: **475,134 messages** across the full topic set (evidence in-repo).
 
-🔗 Repo: [UAV‑Aegis](https://github.com/Rhutvik-pachghare1999/UAV-Aegis)
-
----
-
-### 🛰️ CommandX — Satellite Mission Control Stack
-
-Mission‑control style stack for satellites and orbital systems, focused on health, commands, and operator workflows.
-
-- Encodes core **orbital dynamics and GNC hooks** with room to extend maneuvers and attitude control.  
-- Surfaces **health flags and anomaly signals** so operators can quickly triage events and plan responses.  
-- Aims to feel like the “mission console” for a small satellite or constellation.
-
-🔗 Repo: [CommandX](https://github.com/Rhutvik-pachghare1999/CommandX)
+🔗 Repo: [driftbot-ros2-slam](https://github.com/Rhutvik-pachghare1999/driftbot-ros2-slam)
 
 ---
 
-### 📡 orbit‑Q — Satellite Health & Telemetry MLOps
+### 🛡️ Autonomous Drone Safety Architecture — Real-Time Safety Kernel (C/C++)
 
-Health monitoring and MLOps pipeline for satellite telemetry.
+Hard real-time safety kernel wrapping an AI-driven quadrotor stack: HOCBF safety filter, 15-state EKF, BFT consensus.
 
-- Ingests raw telemetry, builds structured features, and runs **anomaly detection over subsystems**.  
-- Provides dashboards that answer: “Is the spacecraft healthy right now?” and “Which subsystem is drifting?”  
-- Pattern is reusable for any sensor‑heavy robotic or autonomous platform.
+- Deterministic C safety filter that clamps actuator commands; CI-tested.
+- Honest status accounting (implemented / tested / planned); formal FSM/Z3 verification is specified and planned, not yet proven.
 
-🔗 Repo: [orbit‑Q](https://github.com/Rhutvik-pachghare1999/orbit-Q)
-
----
-
-### 💓 PulseNet — Predictive Maintenance for Robotic Systems
-
-Predictive maintenance and anomaly triage pipeline for safety‑critical systems.
-
-- Uses models like **Isolation Forest** and supervised predictors to flag early‑stage failures before hard faults.  
-- Includes **secure logging and audit trails** to support regulated or safety‑critical environments.  
-- Architecture generalizes to robotic arms, mobile robots, and industrial equipment.
-
-🔗 Repo: [PulseNet](https://github.com/Rhutvik-pachghare1999/PulseNet)
+🔗 Repo: [autonomous-drone-safety-architecture](https://github.com/Rhutvik-pachghare1999/autonomous-drone-safety-architecture)
 
 ---
 
-### 🧠 NeuroTraction — Neural Network-Based Real-Time Traction Control
+### 🔎 Edge Detection Active Learning — Label-Efficient Object Detection Benchmark
 
-Real-time AI-powered traction safety system for ground robots using a lightweight neural network.
+Rigorous, leakage-free active-learning benchmark on COCO-2017 (RT-DETR teacher → YOLOv8n student).
 
-- Predicts wheel slip probability from live IMU and odometry data at 20Hz via ROS2.
-- Dynamically throttles motor commands to prevent loss of traction before it occurs.
-- Achieves 99.1% R² accuracy on Clearpath Husky A200 platform.
+- Evaluated against **held-out human labels**, never the teacher's guesses; train/test disjointness is test-enforced.
+- Reports a clean positive result (entropy sampling beats random) **and** an honest negative result (teacher-student disagreement does not).
+- CI-enforced test suite.
 
-🔗 Repo: [NeuroTraction](https://github.com/Rhutvik-pachghare1999/NeuroTraction)
+🔗 Repo: [edge-detection-active-learning](https://github.com/Rhutvik-pachghare1999/edge-detection-active-learning)
 
 ---
 
-### 🚀 Astraeus-9-C-C — Hybrid Orbital Re-Entry Mission Control
+### 🛡️ UAV Aegis — UAV Propeller Fault Diagnostics (ROS2 + Deep Learning)
 
-Fault-tolerant mission control system for orbital re-entry monitoring with embedded sensing and ML anomaly detection.
+Propeller/motor fault diagnostics from high-frequency vibration signatures: 1D-CNN classifier, FFT features, LSTM RUL.
 
-- Integrates ESP32 embedded sensing kernel with Kalman filtering for real-time hardware degradation detection.
-- Physics-based re-entry simulator combined with ML-powered anomaly detection dashboard.
-- Full-stack: Docker + MQTT + Postgres + Streamlit operator dashboard.
+- Detects evolving faults to guide maintenance-vs-launch decisions; ROS2 inference node + Streamlit dashboard.
+- Headline accuracy is reported from training runs; sealed episode-level held-out evaluation is in progress (documented honestly in-repo).
 
-🔗 Repo: [Astraeus-9-C-C](https://github.com/Rhutvik-pachghare1999/Astraeus-9-C-C)
+🔗 Repo: [uav-fault-diagnostics-ros2](https://github.com/Rhutvik-pachghare1999/uav-fault-diagnostics-ros2)
+
+---
+
+### 🧠 NeuroTraction — Real-Time ML Traction Control for Ground Robots (ROS2)
+
+Real-time slip prediction that throttles velocity commands before traction is lost.
+
+- Lightweight MLP predicts wheel slip from IMU + odometry inside a 20Hz ROS2 safety node.
+- **0.945 held-out R²** on a leakage-free split (scaler fit on training data only); a `pytest` leakage guard runs in CI.
+
+🔗 Repo: [neurotraction-ros2-slip-control](https://github.com/Rhutvik-pachghare1999/neurotraction-ros2-slip-control)
 
 ---
 
