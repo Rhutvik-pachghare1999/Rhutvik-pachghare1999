@@ -137,7 +137,7 @@ Rigorous, leakage-free active-learning benchmark on COCO-2017 (RT-DETR teacher â
 
 Propeller/motor fault diagnostics from high-frequency vibration signatures: 1D-CNN classifier, FFT features, LSTM RUL.
 
-- Detects evolving faults to guide maintenance-vs-launch decisions; ROS2 inference node + Streamlit dashboard.
+- Supports propulsion health assessment and maintenance analysis; ROS2 inference node + Streamlit dashboard.
 - Headline accuracy is reported from training runs; sealed episode-level held-out evaluation is in progress (documented honestly in-repo).
 
 ðŸ”— Repo: [uav-fault-diagnostics-ros2](https://github.com/Rhutvik-pachghare1999/uav-fault-diagnostics-ros2)
