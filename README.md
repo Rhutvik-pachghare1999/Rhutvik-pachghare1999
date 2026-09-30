@@ -10,8 +10,6 @@ researcher on the ASU + Barrow Neurological Institute lumbar-spine MRI project.
 Most of what's here is one specialization seen from four angles: perception,
 estimation, fault awareness, and safety enforcement.
 
-Open to full-time robotics and autonomy roles.
-
 ## Projects
 
 **Safety enforcement — [autonomous-drone-safety-architecture](https://github.com/Rhutvik-pachghare1999/autonomous-drone-safety-architecture)**
@@ -63,6 +61,13 @@ RAS 598 Team 07 (with Mohammad Nasr and Shashank Sing Deo): a TurtleBot 4 that f
 - My part: detection model, ROS 2 integration, deployment. 15 ms per frame on a Raspberry Pi 4; 95% follow success around static obstacles, 87% with people moving through.
 - SLAM + Nav2 never ran stably on the physical robot, so we shipped reactive gap-following instead. That tradeoff is written up in the repo.
 
+## Numbers I got wrong
+
+- NeuroTraction first reported R² 0.9912 with a scaler fit on the full dataset. That was leakage. The corrected number, R² 0.9999, is leakage-free but comes from held-out rows 0.05 s from training rows — interpolation on three easy runs, not generalization. Both numbers stay in the repo as a record of the mistake.
+- UAV Aegis once reported 99.0% test accuracy from a non-frozen split. Rebuilding the pipeline around a sealed, sha256-pinned flight-level split put it at 81.7%. The 81.7 is the number I cite.
+
 ## Contact
+
+Open to full-time robotics and autonomy roles. I respond within a day.
 
 Portfolio: https://port-web-891m.onrender.com/ · LinkedIn: https://www.linkedin.com/in/rhutvik-pachghare/ · Email: rhutvik012@gmail.com
