@@ -1,73 +1,25 @@
 # Rhutvik Pachghare
 
-Robotics & Autonomous Systems Engineer. I build the layers between a learned
-model and the hardware it can hurt: state estimation, fault diagnostics, and a
-safety filter that gets the last word on any command.
+I'm a robotics engineer working on the boundary between learned autonomy and the physical systems it controls: state estimation, control, fault diagnosis, and repeatable evaluation.
 
-MS in Robotics and Autonomous Systems, Arizona State University. Graduate
-researcher on the ASU + Barrow Neurological Institute lumbar-spine MRI project.
+M.S. in Robotics and Autonomous Systems, Arizona State University. I work primarily with ROS 2, Python/C++, Gazebo, Isaac Sim, and robot learning tools.
 
-Most of what's here is one specialization seen from four angles: perception,
-estimation, fault awareness, and safety enforcement.
+I'm also exploring a startup around a practical robotics problem: making new robot skills less costly to test, deploy, and maintain. That work is still at the research and customer-discovery stage. The public projects below show the engineering I've actually done.
 
-## Projects
+## Selected engineering work
 
-**Safety enforcement — [autonomous-drone-safety-architecture](https://github.com/Rhutvik-pachghare1999/autonomous-drone-safety-architecture)**
-Every command from an RL policy or a vision-language model passes through a closed-form HOCBF filter before the motors. C/C99 hot path, no solver in the loop.
+- **[Autonomous drone safety architecture](https://github.com/Rhutvik-pachghare1999/autonomous-drone-safety-architecture)** — A control-barrier-function filter between learned commands and a simulated Crazyflie. In one defined 500-pair Isaac Sim stress test, the filtered controller avoided the crash condition in all 500 trials; the unfiltered controller did not. **Simulation only, not a hardware safety certification.**
+- **[UAV Aegis: fault diagnostics](https://github.com/Rhutvik-pachghare1999/uav-fault-diagnostics-ros2)** — Physics-based rotor fault injection, IMU/RPM classification, and ROS 2 deployment code. **81.7%** on the documented sealed, flight-separated simulation test set, with important weak classes reported.
+- **[DriftBot: ROS 2 SLAM evaluation](https://github.com/Rhutvik-pachghare1999/driftbot-ros2-slam)** — Jackal, EKF, SLAM Toolbox, and Gazebo. **5.7 cm** trajectory RMSE on a scripted simulation run. Autonomous Nav2 performance is not included in that benchmark.
+- **[EdgeAL: active-learning benchmark](https://github.com/Rhutvik-pachghare1999/edge-detection-active-learning)** — Compared image-selection methods on COCO using held-out human labels. At the evaluated 2% and 4% budgets, **random sampling was a stronger baseline** than the tested uncertainty methods. I kept the negative result.
+- **[Assistive follower robot](https://github.com/Rhutvik-pachghare1999/assistive-follower-robot)** — Team-built TurtleBot 4 that follows a person using OAK-D vision and LiDAR obstacle avoidance. My work covered the detection model, ROS 2 integration, and deployment.
 
-- 500 paired Isaac Sim episodes on the Crazyflie 2.X: filter on survived 500/500, filter off crashed 500/500. Identical controller; only the projection differs.
-- Observed max filter latency 2,725 ns over 100,000 cycles against a 100 µs budget (p99: 31 ns).
-- EKF gating, HMAC-authenticated swarm consensus, and a live rendered-camera VLA loop (216/216 structured parses, zero crashes).
-- Simulation only, not certified, formal verification planned — stated in the repo.
-- [Project poster](https://rhutvik-pachghare1999.github.io/autonomous-drone-safety-architecture/)
+More work: [evaluation provenance framework](https://github.com/Rhutvik-pachghare1999/robotics-eval-framework) · [wheel-slip control](https://github.com/Rhutvik-pachghare1999/neurotraction-ros2-slip-control) · [research on lumbar MRI](https://github.com/Rhutvik-pachghare1999/bni-asu-lumbar-stenosis-asd).
 
-**Fault awareness — [uav-fault-diagnostics-ros2](https://github.com/Rhutvik-pachghare1999/uav-fault-diagnostics-ros2)** (UAV Aegis)
-Classifies which rotors are faulted on a Crazyflie 2.1 from 0.2 s IMU + RPM windows. 112K-parameter CNN on 96 fault-injected Isaac Sim flights at 500 Hz.
+## How I approach robotics
 
-- 81.7% on a sealed test set of 32 untouched flights (35,232 windows); healthy-flight F1 is 1.00 — no false alarms, no missed faults on that set.
-- 93.2% mean accuracy holding out an entire hover-RPM bin per fold (4 folds, retrained each time).
-- Out-of-distribution windows flagged at AUROC 0.996; 0.37 ms p99 inference on CPU; deploys as a single ROS 2 Jazzy node that refuses to run on invalid inputs.
-- The honest corner: the R3+R4 fault pair reaches 0.13 recall at low RPM, and everything is simulation-only.
+I care about whether a system works outside its easiest demonstration. I try to keep simulation results separate from hardware results, check against independent ground truth where possible, and document the cases that fail.
 
-**State estimation — [driftbot-ros2-slam](https://github.com/Rhutvik-pachghare1999/driftbot-ros2-slam)**
-Reproducible SLAM evaluation on a simulated Clearpath Jackal: Gazebo Harmonic, robot_localization EKF, slam_toolbox, Nav2.
+If you're working on robot reliability, manipulation, or learned autonomy, I'd be interested in comparing approaches.
 
-- 5.7 cm trajectory RMSE over an 8.96 m scripted drive (1,565 synced samples).
-- Map vs continuous ground-truth surfaces: 2.7 cm precision, 99.8% surface recall, zero spurious obstacles.
-- Published benchmark is teleop-only; the Nav2 autonomous demo is blocked by a documented TF time-sync issue in Gazebo. Both facts are in the README.
-
-**Slip estimation — [neurotraction-ros2-slip-control](https://github.com/Rhutvik-pachghare1999/neurotraction-ros2-slip-control)**
-A small MLP reads IMU + wheel odometry inside a ROS 2 safety node and scales velocity commands before traction is lost (IMU-rate, ≤20 Hz).
-
-- ~99.4% binary grip/slip accuracy on a per-recording strided hold-out, scaler fit on train rows only.
-- Three scripted runs total — a working prototype, not a generalization claim. See "Numbers I got wrong" below.
-
-**Evaluation honesty — [edge-detection-active-learning](https://github.com/Rhutvik-pachghare1999/edge-detection-active-learning)** (EdgeAL)
-Active-learning benchmark for edge object detection on COCO-2017 (RT-DETR teacher, YOLOv8n student), scored against held-out human labels.
-
-- At 2% and 4% label budgets, random sampling was the strongest baseline; the uncertainty strategies tested did not beat it.
-- 76 tests plus one data-gated skip run in CI on every push.
-
-**Medical imaging — [bni-asu-lumbar-stenosis-asd](https://github.com/Rhutvik-pachghare1999/bni-asu-lumbar-stenosis-asd)**
-ASU + Barrow Neurological Institute statement-of-work pipeline: multi-task ConvNeXt-Tiny diagnosing five lumbar-stenosis conditions on RSNA 2024 MRI, with external validation on a Barrow cohort.
-
-- Phase 1 code is complete and audit-remediated; final metrics wait on the full A100 cluster run, so there is no accuracy number to cite yet.
-- Every result carries git SHA + config, manifest, and checkpoint hashes.
-- Poster presented at the ASU Forge Research Expo 2026.
-
-**Team hardware — [assistive-follower-robot](https://github.com/Rhutvik-pachghare1999/assistive-follower-robot)**
-RAS 598 Team 07 (with Mohammad Nasr and Shashank Sing Deo): a TurtleBot 4 that follows a person by detecting their shoes (OAK-D + ResNet18) and steering through the widest LiDAR gap.
-
-- My part: detection model, ROS 2 integration, deployment. 15 ms per frame on a Raspberry Pi 4; 95% follow success around static obstacles, 87% with people moving through.
-- SLAM + Nav2 never ran stably on the physical robot, so we shipped reactive gap-following instead. That tradeoff is written up in the repo.
-
-## Numbers I got wrong
-
-- NeuroTraction first reported R² 0.9912 with a scaler fit on the full dataset. That was leakage. The corrected number, R² 0.9999, is leakage-free but comes from held-out rows 0.05 s from training rows — interpolation on three easy runs, not generalization. Both numbers stay in the repo as a record of the mistake.
-- UAV Aegis once reported 99.0% test accuracy from a non-frozen split. Rebuilding the pipeline around a sealed, sha256-pinned flight-level split put it at 81.7%. The 81.7 is the number I cite.
-
-## Contact
-
-Open to full-time robotics and autonomy roles. I respond within a day.
-
-Portfolio: https://port-web-891m.onrender.com/ · LinkedIn: https://www.linkedin.com/in/rhutvik-pachghare/ · Email: rhutvik012@gmail.com
+[Portfolio](https://port-web-891m.onrender.com/) · [LinkedIn](https://www.linkedin.com/in/rhutvik-pachghare/) · [Email](mailto:rhutvik012@gmail.com)
